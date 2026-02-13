@@ -13,7 +13,10 @@ public class OverViewPage extends BasePage{
     }
 
     public OpenNewAccountPage clickOpenNewAccountLink(){
-        getElement(By.cssSelector("div[id='leftPanel'] h2")).click();
+        getElement(By.cssSelector("a[href='openaccount.htm']")).click();
         return navigateToPage(OpenNewAccountPage.class);
     }
+
+
+
 }
