@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class OpenNewAccountTest extends BaseTest{
     @Test
-    public void openNewAccountShouldSucceedv1(){
+    public void openNewAccountShouldSucceed(){
         LoginPage page=pg.navigateToPage(LoginPage.class);
         page=page.fillUsername("mosabbir19")
                 .fillPassword("1234");
