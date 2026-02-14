@@ -3,7 +3,7 @@ package org.parabank.parasoft.test;
 import org.parabank.parasoft.pages.LoginPage;
 import org.parabank.parasoft.pages.OpenedAccountPage;
 import org.parabank.parasoft.pages.OpenNewAccountPage;
-import org.parabank.parasoft.pages.OverViewPage;
+import org.parabank.parasoft.pages.OverviewPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,7 +13,7 @@ public class OpenNewAccountTest extends BaseTest{
         LoginPage page=pg.navigateToPage(LoginPage.class);
         page=page.fillUsername(getUsername())
                 .fillPassword(getPassword());
-        OverViewPage page2=page.clickLoginButton();
+        OverviewPage page2=page.clickLoginButton();
         OpenNewAccountPage page3=page2.clickOpenNewAccountLink();
         OpenedAccountPage page4=page3.clickOpenNewAccountButton();
 

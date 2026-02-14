@@ -3,24 +3,34 @@ package org.parabank.parasoft.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BasePage{
-    public LoginPage(WebDriver webdriver) {
-        super(webdriver);
+public class LoginPage extends BasePage {
+    public LoginPage(WebDriver driver) {
+        super(driver);
     }
 
-    public LoginPage fillUsername(String username){
+    public LoginPage fillUsername(String username) {
         getElement(By.cssSelector("input[name='username']")).sendKeys(username);
         return this;
     }
 
-    public LoginPage fillPassword(String password){
+    public LoginPage fillPassword(String password) {
         getElement(By.xpath("//input[@name='password']")).sendKeys(password);
         return this;
     }
-
-    public OverViewPage clickLoginButton(){
+    public OverviewPage clickLoginButton(){
         getElement(By.cssSelector("input[value='Log In']")).click();
-        return navigateToPage(OverViewPage.class);
+        return navigateToPage(OverviewPage.class);
     }
 
+
+    public RegisterPage clickRegisterLink() {
+        clickElement(By.cssSelector("a[href='register.htm']"));
+        return navigateToPage(RegisterPage.class);
+    }
+
+    public OverviewPage doLogin(String username, String password) {
+        fillUsername(username);
+        fillPassword(password);
+        return clickLoginButton();
+    }
 }
