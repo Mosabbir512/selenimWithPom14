@@ -11,8 +11,8 @@ public class OpenNewAccountTest extends BaseTest{
     @Test
     public void openNewAccountShouldSucceed(){
         LoginPage page=pg.navigateToPage(LoginPage.class);
-        page=page.fillUsername("mosabbir19")
-                .fillPassword("1234");
+        page=page.fillUsername(getUsername())
+                .fillPassword(getPassword());
         OverViewPage page2=page.clickLoginButton();
         OpenNewAccountPage page3=page2.clickOpenNewAccountLink();
         OpenedAccountPage page4=page3.clickOpenNewAccountButton();
@@ -24,8 +24,8 @@ public class OpenNewAccountTest extends BaseTest{
     @Test
     public void openNewAccountShouldSucceedv2(){
         OpenedAccountPage page4=pg.navigateToPage(LoginPage.class)
-                .fillUsername("mosabbir19")
-                .fillPassword("1234")
+                .fillUsername(getUsername())
+                .fillPassword(getPassword())
                 .clickLoginButton()
                 .clickOpenNewAccountLink()
                 .clickOpenNewAccountButton();

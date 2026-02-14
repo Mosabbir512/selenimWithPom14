@@ -67,16 +67,22 @@ public class BaseTest {
         driver.get(prop.getProperty("baseUrl"));
         pg = new BasePage(driver);
 
-//        driver=new FirefoxDriver();
-//        System.out.println("Browser Set up before each test method.");
-//        driver.manage().window().maximize();
-//        driver.get("https://parabank.parasoft.com/parabank/index.htm");
-//        pg=new BasePage(driver);
+
+
     }
 
     @AfterMethod
     public void browserTearDown(){
         driver.quit();
         System.out.println("Browser TearDown after each method. ");
+    }
+
+
+    public String getUsername() {
+        return prop.getProperty("username");
+    }
+
+    public String getPassword() {
+        return prop.getProperty("password");
     }
 }
