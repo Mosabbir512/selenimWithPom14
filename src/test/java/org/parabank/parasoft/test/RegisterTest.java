@@ -28,7 +28,6 @@ public class RegisterTest extends BaseTest {
                 .fillConfirmPassword("password123");
         OverviewPage overViewPage= registerPage.clickRegisterButton();
         Assert.assertTrue(overViewPage.hasLogOutLink());
-
     }
 
     @Test
