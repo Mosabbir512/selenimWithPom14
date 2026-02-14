@@ -18,15 +18,15 @@ public class OverviewPage extends BasePage {
         getElement(By.cssSelector("a[href='openaccount.htm']")).click();
         return navigateToPage(OpenNewAccountPage.class);
     }
-//
-//    public RequestLoanPage clickRequestLoanLink() {
-//        clickElement(By.cssSelector("a[href='requestloan.htm']"));
-//        return navigateToPage(RequestLoanPage.class);
-//    }
-//
-//    public UpdateProfilePage clickUpdateProfileLink() {
-//        clickElement(By.cssSelector("a[href='updateprofile.htm']"));
-//        return navigateToPage(UpdateProfilePage.class);
-//    }
+
+    public RequestLoanPage clickRequestLoanLink() {
+        clickElement(By.cssSelector("a[href='requestloan.htm']"));
+        return navigateToPage(RequestLoanPage.class);
+    }
+
+    public UpdateProfilePage clickUpdateProfileLink() {
+        clickElement(By.cssSelector("a[href='updateprofile.htm']"));
+        return navigateToPage(UpdateProfilePage.class);
+    }
 
 }

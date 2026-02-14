@@ -71,4 +71,35 @@ public class RegisterTest extends BaseTest {
 //        Assert.assertTrue(oPage.hasLogOutLink());
 //    }
 
+
+    @Test
+    public void registerShouldFailWithOutUsername() {
+        String existingUsername = getUsername(); // Assuming this username already exists
+        RegisterPage registerPage = pg.navigateToPage(LoginPage.class)
+                .clickRegisterLink()
+                .fillFirstName("Jane")
+                .fillLastName("Smith")
+                .fillAddress("456 Elm St")
+                .fillCity("Othertown")
+                .fillState("Otherstate")
+                .fillZipCode("67890")
+                .fillPhone("098-765-4321")
+                .fillSsn("987-65-4321")
+                .fillPassword("newpassword123")
+                .fillConfirmPassword("newpassword123")
+                .clickRegisterLink();
+        Assert.assertTrue(registerPage.hasErrorMessage(1));
+    }
+
+
+
+    @Test
+    public void registerShouldFailWithOnlyUsername() {
+        RegisterPage registerPage = pg.navigateToPage(LoginPage.class)
+                .clickRegisterLink()
+                .fillFirstName("Jane")
+                .clickRegisterLink();
+        Assert.assertTrue(registerPage.hasErrorMessage(9));
+    }
+
 }
