@@ -15,14 +15,14 @@ public class RegisterTest extends BaseTest {
         LoginPage page = pg.navigateToPage(LoginPage.class);
         RegisterPage registerPage = page.clickRegisterLink();
         registerPage = registerPage
-                .fillFirstName("John")
-                .fillLastName("Doe")
-                .fillAddress("123 Main St")
-                .fillCity("Anytown")
-                .fillState("Anystate")
-                .fillZipCode("12345")
-                .fillPhone("123-456-7890")
-                .fillSsn("123-45-6789")
+                .fillFirstName("Mosabbir")
+                .fillLastName("Hossain")
+                .fillAddress("Santosh ,Tangail")
+                .fillCity("Tangail")
+                .fillState("Dhaka")
+                .fillZipCode("5200")
+                .fillPhone("01869587542")
+                .fillSsn("0173090406")
                 .fillUsername(username)
                 .fillPassword("password123")
                 .fillConfirmPassword("password123");

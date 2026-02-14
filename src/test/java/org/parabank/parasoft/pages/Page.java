@@ -25,6 +25,8 @@ public abstract class Page {
     public abstract void clickElement(By selector);
     public abstract String getPageTitle();
 
+    public abstract void waitForElementToBeVisible(By selector);
+
     public <T extends BasePage> T navigateToPage(Class<T> pageClass){
         try {
             return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
