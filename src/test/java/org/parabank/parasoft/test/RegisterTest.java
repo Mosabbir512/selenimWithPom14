@@ -4,7 +4,9 @@ import org.parabank.parasoft.pages.LoginPage;
 import org.parabank.parasoft.pages.OverviewPage;
 import org.parabank.parasoft.pages.RegisterPage;
 import com.thedeanda.lorem.LoremIpsum;
+import org.parabank.parasoft.util.ParaBankUtil;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class RegisterTest extends BaseTest {
@@ -50,25 +52,30 @@ public class RegisterTest extends BaseTest {
         Assert.assertTrue(oPage.hasLogOutLink());
     }
 
-//    @Test(dataProvider = "getDataProviderData")
-//    public void registerDdtShouldSucceedV2(String firstName, String lastName, String address) {
-//        String username = LoremIpsum.getInstance().getName().replaceAll(" ", "");
-//        OverviewPage oPage = pg.navigateToPage(LoginPage.class)
-//                .clickRegisterLink()
-//                .fillFirstName(firstName)
-//                .fillLastName(lastName)
-//                .fillAddress(address)
-//                .fillCity(LoremIpsum.getInstance().getCity())
-//                .fillState(LoremIpsum.getInstance().getStateAbbr())
-//                .fillZipCode(LoremIpsum.getInstance().getZipCode())
-//                .fillPhone(LoremIpsum.getInstance().getPhone())
-//                .fillSsn(LoremIpsum.getInstance().getPhone())
-//                .fillUsername(username)
-//                .fillPassword(username)
-//                .fillConfirmPassword(username)
-//                .clickRegisterButton();
-//        Assert.assertTrue(oPage.hasLogOutLink());
-//    }
+    @Test(dataProvider = "getDataProviderData")
+    public void registerDdtShouldSucceedV2(String firstName, String lastName, String address) {
+        String username = LoremIpsum.getInstance().getName().replaceAll(" ", "");
+        OverviewPage oPage = pg.navigateToPage(LoginPage.class)
+                .clickRegisterLink()
+                .fillFirstName(firstName)
+                .fillLastName(lastName)
+                .fillAddress(address)
+                .fillCity(LoremIpsum.getInstance().getCity())
+                .fillState(LoremIpsum.getInstance().getStateAbbr())
+                .fillZipCode(LoremIpsum.getInstance().getZipCode())
+                .fillPhone(LoremIpsum.getInstance().getPhone())
+                .fillSsn(LoremIpsum.getInstance().getPhone())
+                .fillUsername(username)
+                .fillPassword(username)
+                .fillConfirmPassword(username)
+                .clickRegisterButton();
+        Assert.assertTrue(oPage.hasLogOutLink());
+    }
+
+    @DataProvider
+    public static Object[][] getDataProviderData() {
+        return ParaBankUtil.getTestData("Sheet1");
+    }
 
 
     @Test

@@ -15,11 +15,13 @@ public class UpdateProfileTest extends BaseTest{
                 .fillFirstName("Mosa")
                 .fillLastName("Hoss")
                 .fillAddress("Din")
+                
                 .fillCity("Tan")
                 .fillState("Dha")
                 .fillZipCode("5200")
                 .fillPhone("22222")
                 .clickUpdateProfileButton();
-        Assert.assertTrue(up.isResultMessageDisplayed());
+        Assert.assertTrue(up.isResultMessageDisplayed()
+        );
     }
 }
